@@ -1,22 +1,16 @@
-This is the reference code for [CryptoNote](https://cryptonote.org) cryptocurrency protocol.
 
-* Launch your own CryptoNote currency: [CryptoNote Starter](https://cryptonotestarter.org/)
-* CryptoNote reference implementation: [CryptoNoteCoin](https://cryptonote-coin.org)
-* Discussion board and support: [CryptoNote Forum](https://forum.cryptonote.org)
 
-## CryptoNote forking how-to
+## Pitcoin Source Code, if you want to make forking, please follow below
 
 ### Preparation
 
-1. Create an account on [GitHub.com](github.com)
-2. Fork [CryptoNote repository](https://github.com/cryptonotefoundation/cryptonote)
+1. Create an account on [GitHub](https://github.com)
+2. Fork [Pitcoin repository](https://github.com/tdogtoken/PitcoinSourceCode.git)
 3. Buy one or two Ubuntu-based dedicated servers (at least 2Gb of RAM) for seed nodes.
 
 
 
 ### First step. Give a name to your coin
-
-**Good name must be unique.** Check uniqueness with [google](http://google.com) and [Map of Coins](mapofcoins.com) or any other similar service.
 
 Name must be specified twice:
 
@@ -24,14 +18,14 @@ Name must be specified twice:
 
 Example: 
 ```
-const char CRYPTONOTE_NAME[] = "furiouscoin";
+const char CRYPTONOTE_NAME[] = "pitcoin";
 ```
 
 **2. in src/CMakeList.txt file** - set_property(TARGET daemon PROPERTY OUTPUT_NAME "YOURCOINNAME**d**")
 
 Example: 
 ```
-set_property(TARGET daemon PROPERTY OUTPUT_NAME "furiouscoind")
+set_property(TARGET daemon PROPERTY OUTPUT_NAME "pitcoind")
 ```
 
 **Note:** You should also change a repository name.
@@ -56,7 +50,7 @@ Be default CryptoNote provides emission formula with slight decrease of block re
 
 Example:
 ```
-const unsigned EMISSION_SPEED_FACTOR = 18;
+const unsigned EMISSION_SPEED_FACTOR = 9;
 ```
 
 **3. Difficulty target** (src/CryptoNoteConfig.h)
@@ -156,13 +150,21 @@ const size_t CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE = 20000;
 
 ### Fifth step. Address prefix
 
-You may choose a letter (in some cases several letters) all the coin's public addresses will start with. It is defined by `CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX` constant. Since the rules for address prefixes are nontrivial you may use the [prefix generator tool](https://cryptonotestarter.org/tools.html).
+You may choose a letter (in some cases several letters) all the coin's public addresses will start with. It is defined by `CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX` constant. 
 
 Example:
 ```
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0xe9; // addresses start with "f"
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x89; // addresses start with "Pv"
 ```
-
+```
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 18; // addresses start with "4"
+```
+```
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 39; // addresses start with "7"
+```
+```
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 66; // addresses start with "C"
+```
 
 ### Sixth step. Genesis block
 
@@ -182,7 +184,7 @@ Run your daemon with `--print-genesis-tx` argument. It will print out the genesi
 
 Example:
 ```
-furiouscoind --print-genesis-tx
+pitcoind --print-genesis-tx
 ```
 
 
@@ -201,9 +203,7 @@ const char GENESIS_COINBASE_TX_HEX[] = "013c01ff0001ffff...785a33d9ebdba68b0";
 Recompile everything again. Your coin code is ready now. Make an announcement for the potential users and enjoy!
 
 
-## Building CryptoNote 
-
-### On *nix
+## Building Pitcoin On Linux:
 
 Dependencies: GCC 4.7.3 or later, CMake 2.8.6 or later, and Boost 1.55.
 
@@ -216,26 +216,15 @@ You may download them from:
 
 To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
 
-**Advanced options:**
-
-* Parallel build: run `make -j<number of threads>` instead of `make`.
-* Debug build: run `make build-debug`.
-* Test suite: run `make test-release` to run tests in addition to building. Running `make test-debug` will do the same to the debug version.
-* Building with Clang: it may be possible to use Clang instead of GCC, but this may not work everywhere. To build, run `export CC=clang CXX=clang++` before running `make`.
-
-### On Windows
-Dependencies: MSVC 2013 or later, CMake 2.8.6 or later, and Boost 1.55. You may download them from:
-
-* http://www.microsoft.com/
-* http://www.cmake.org/
-* http://www.boost.org/
-
-To build, change to a directory where this file is located, and run theas commands: 
-```
-mkdir build
-cd build
-cmake -G "Visual Studio 12 Win64" ..
-```
-
 And then do Build.
 Good luck!
+
+Store Mine and Transfer Pitcoin Part1:   https://youtu.be/6rdx2x83eF4
+
+Store Mine and Transfer Pitcoin Part2:   https://youtu.be/ZBwNcbYxfBc
+
+Store Mine and Transfer Pitcoin Part3:   https://youtu.be/vlY-swnMwCI
+
+Store Mine and Transfer Pitcoin Part4:   https://youtu.be/tgZbx-UvhZU
+
+Store Mine and Transfer Pitcoin Part5:   https://youtu.be/6g8c247Use8
