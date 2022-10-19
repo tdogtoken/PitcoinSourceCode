@@ -1,6 +1,6 @@
 
 
-## Pitcoin Source Code, please keep in mind that even though Pitcoin is privacy coin, Pitcoin's main core is still using Bitcoin's main core. If you want to make forking, please follow below
+## Pitcoin Source Code, please keep in mind that even though Pitcoin is privacy coin, Pitcoin's main core is still using Bitcoin's main core. If you want to make forking, please follow below:
 
 ### Preparation
 
