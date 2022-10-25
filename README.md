@@ -1,6 +1,6 @@
 
 
-## Pitcoin Source Code, please keep in mind that even though Pitcoin is privacy coin, Pitcoin's main core is still using Bitcoin's main core. If you want to make forking, please follow below:
+## Pitcoin Source Code, please keep in mind that even though Pitcoin is privacy coin, Pitcoin's main core is still using Bitcoin's main core. Please also keep in mind that when you folk bitcoin, don't choose the newest version bitcoin core to compile for folk. The older the better, usually the first version bitcoin core is better. If the first version bitcoin core gets problem, all the Altcoins will have problem because they all folk from compiling Bitcoin core. If you want to make forking, please follow below:
 
 ### Preparation
 
